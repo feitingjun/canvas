@@ -1,0 +1,19 @@
+报错：Uncaught ReferenceError: regeneratorRuntime is not defined
+解决：装一个包 babel-plugin-transform-runtime 并且在.babelrc中的plugins引入"transform-runtime"
+
+报错：打包的文件必须在服务器下运行，不能直接运行静态文件
+解决：对于网页项目，存在<BrowserRouter>与<HashRouter>两种Router组件。
+    当存在服务区来管理动态请求时，需要使用<BrowserRouter>组件，而<HashRouter>被用于静态网站。
+
+报错：始终报错说使用的是小型什么什么，正式环境使用的什么不完整什么的
+解决：使用包cross-env 区分正式环境和生产环境 详见package.json和webpack.confing.json
+
+报错：打包时说js文件大小超过500kb
+解决：配置时js和css等文件打包用exclude排除 /node_modules/
+    rules:[{
+                test:/(\.jsx|\.js)$/,//对js或jsx文件使用babel-loader
+                use:{
+                    loader:"babel-loader"
+                },
+                exclude: /node_modules/
+            }

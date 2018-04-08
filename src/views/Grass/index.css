@@ -1,0 +1,17 @@
+.container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.container canvas{
+    width:100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.canvas1{
+    background: #010E16;
+}
